@@ -1,11 +1,15 @@
-# Twitch Interactive Timer Overlay
-I needed a timer where user could add or remove time by using commands
+# Twitch Chat Bubble Overlay
+This is a dynamic chat overlay in the shape of a chat bubble.
 
-I also wanted to integrate points users can collect while watching the stream. Either trough a bot or the Twitch channel points.
+I was getting tired of static non-aestetic looking chat overlays and wanted something new.
 
 The outcome is this overlay, you can use and configure however you like.
 
 </br>
+
+I built this Chat overlay live on my stream!
+
+> https://twitch.tv/schkullie
 
 If you like this overlay and want to support me, you can 
 > [Buy me a coffee](https://streamlabs.com/schkullie/tip)
@@ -17,8 +21,6 @@ If you like this overlay and want to support me, you can
 This overlay is only possible thanks to [ComfyJS](https://github.com/instafluff/ComfyJS) made by [@Instafluff](https://github.com/instafluff)
 
 The default font used is [OpenDyslexic](https://www.opendyslexic.org/) and was choosen to be more inclusive by improving readability & accessibility
-
-</br>
 
 [![Tutorial](https://img.youtube.com/vi/.../hqdefault.jpg)](https://www.youtube.com/)
 
@@ -37,6 +39,6 @@ I sometimes stream coding, but mainly I do music on stream
 
    2. Edit all the other parameters to your liking
 
-   3. (If you want to change the Font, open ``timer.css`` in an editor and replace ``OpenDyslexic`` after the second ``font-family:`` with the name of your prefered Google font) (don't delete the '' or it will not work)
+   3. (If you want to change the Font, open ``chat bubble.css`` in an editor and replace ``OpenDyslexic`` after the second ``font-family:`` with the name of your prefered Google font) (don't delete the '' or it will not work)
 
-3. Add the ``timer.html`` as a browser source to OBS and make sure to enable the last option "refresh browser when scene becomes active" to avoid any problems in the future
+3. Add the ``chat bubble.html`` as a browser source to OBS and make sure to enable the last option "refresh browser when scene becomes active" to avoid any problems in the future
