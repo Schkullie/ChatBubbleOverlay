@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('opendyslexicmono-regular-webfont.woff2') format('woff2'),
+         url('opendyslexicmono-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'OpenDyslexic';
+    font-size: 25px;
+    color: black;
+    text-align: left;
+	transition-timing-function: ease;
+	
+}
+
+article
+{
+	position: fixed;
+	bottom: 0;
+	opacity: 0; 
+	transition-timing-function: ease-in;
+	transition-timing-function: ease-out;
+	transition: 0.2s;
+}
+
+#chat
+{
+	width: 100%;
+	max-width: 500px;
+	overflow: hidden;
+	position: relative;
+	bottom: -25px;
+	padding: 20px;
+	background-color: white;
+	/* box-shadow:  2px 2px 5px; */
+	/* border: black solid 1px; */
+	border-radius: 10px;
+}
+
+#triangle
+{
+	position: relative;
+	bottom: 0px;
+	/* left: 20px; */
+	width: 60px;
+}
+
+.stamp
+{
+	/* font-size: 10px; */
+}
+
+img
+{
+	margin: 0px 3px 0px 0px;
+}
