@@ -1,4 +1,7 @@
 # Twitch Chat Bubble Overlay
+
+![Example](https://i.ibb.co/sswZ8GX/image.gif)
+
 This is a dynamic chat overlay in the shape of a chat bubble.
 
 I was getting tired of static non-aestetic looking chat overlays and wanted something new.
