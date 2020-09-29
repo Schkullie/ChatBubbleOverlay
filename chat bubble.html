@@ -12,12 +12,14 @@
 	<body>
 	
 		<!-- article contains all the elements of the HTML to make bubble shown/hidden easier -->
-		<article id="bubble">
-				<!-- used to show the chat message -->
-			<p id="chat"></p>
-				<!-- graphic to achive the speech bubble look -->
-			<img id="triangle" src="smallthingy.png">
-		</article>
+		<div id="container">
+			<article id="bubble">
+					<!-- used to show the chat message -->
+				<p id="chat"></p>
+					<!-- graphic to achive the speech bubble look -->
+				<img id="triangle" src="smallthingy.png">
+			</article>
+		</div>
 		
 		<script>
 				<!-- Creates the array the messages will be stored in -->
@@ -69,6 +71,10 @@
 												if(badgeID == "moderator")
 													{
 														usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1 \">' + usercolor;
+													}
+												if(badgeID == "subscriber")
+													{
+														usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/1 \">' + usercolor;
 													}
 												if(badgeID == "founder")
 													{
@@ -190,6 +196,7 @@
 							clearTimeout(timer);
 							timer = setTimeout(function() {  element.style.opacity = "0"; chat = [];}, parseInt(seconds, 10)*1000);
 						}
+		console.log(extra.userBadges);
 				}
 					<!-- Declaring which channel's chat should be used for the bubble -->
 				ComfyJS.Init( channel );
@@ -202,13 +209,16 @@
 		{
 			tri.style.transform = 'scaleX(-1)';
 			chatstyle.style.boxShadow = '-2px 2px 5px';
-			tri.style.left = '460px';
+			tri.style.left = '85%';
+			bubble.style.right = '20px';
 		}
 		else
 		{
 			chatstyle.style.boxShadow = '2px 2px 5px';
 			tri.style.left = '20px';
-		}		
+			bubble.style.left = '20px';
+		}
+		consol
 		</script>
 	</body>
 </html>

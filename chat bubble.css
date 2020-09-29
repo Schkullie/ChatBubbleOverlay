@@ -9,13 +9,13 @@
 body {
     font-family: 'OpenDyslexic';
     font-size: 25px;
+	font-align: left;
     color: black;
-    text-align: left;
 	transition-timing-function: ease;
-	
+	max-width: 500px;
 }
 
-article
+#bubble
 {
 	position: fixed;
 	bottom: 0;
@@ -34,8 +34,6 @@ article
 	bottom: -25px;
 	padding: 20px;
 	background-color: white;
-	/* box-shadow:  2px 2px 5px; */
-	/* border: black solid 1px; */
 	border-radius: 10px;
 }
 
