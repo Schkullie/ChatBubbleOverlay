@@ -1,5 +1,5 @@
 
-var channel = "Instafluff" ;
+var channel = "Schkullie" ;
 //your Twitchname. Leave the "" alone. It will not work without them.
 
 var bot = "BotName";
@@ -8,7 +8,7 @@ var bot = "BotName";
 var indicator = 'left';
 //set the little triangle at the bottom to the side you want wwith either 'left' or 'rigth'
 
-var namecolor = 'darkgray';
+var namecolor = 'firebrick';
 //choose the default name color if Twitch doesn't provide one
 
 var badges = 'yes' ;
