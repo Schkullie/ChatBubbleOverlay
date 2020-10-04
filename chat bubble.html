@@ -12,12 +12,12 @@
 	<body>
 	
 		<!-- article contains all the elements of the HTML to make bubble shown/hidden easier -->
-			<article id="bubble">
-					<!-- used to show the chat message -->
-				<p id="chat"></p>
-					<!-- graphic to achive the speech bubble look -->
-				<img id="triangle" src="smallthingy.png">
-			</article>
+		<article id="bubble">
+				<!-- used to show the chat message -->
+			<p id="chat"></p>
+				<!-- graphic to achive the speech bubble look -->
+			<img id="triangle" src="smallthingy.png">
+		</article>
 		
 		<script>
 				<!-- Creates the array the messages will be stored in -->
@@ -194,7 +194,6 @@
 							clearTimeout(timer);
 							timer = setTimeout(function() {  element.style.opacity = "0"; chat = [];}, parseInt(seconds, 10)*1000);
 						}
-		console.log(extra.userBadges);
 				}
 					<!-- Declaring which channel's chat should be used for the bubble -->
 				ComfyJS.Init( channel );
@@ -207,7 +206,7 @@
 		{
 			tri.style.transform = 'scaleX(-1)';
 			chatstyle.style.boxShadow = '-2px 2px 5px';
-			tri.style.left = '85%';
+			tri.style.right = '20px';
 			bubble.style.right = '20px';
 		}
 		else
@@ -216,7 +215,6 @@
 			tri.style.left = '20px';
 			bubble.style.left = '20px';
 		}
-		consol
 		</script>
 	</body>
 </html>

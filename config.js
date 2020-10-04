@@ -14,7 +14,7 @@ var namecolor = 'firebrick';
 var badges = 'yes' ;
 //toggle if badges (Mod, VIP, Sub) should be shown. Put 'yes' to activate and 'no' to deactivate
 
-var timestamp = 'yes' ;
+var timestamp = 'no' ;
 //toggle if a timestamp should be shown. Put 'yes' to activate and 'no' to deactivate
 
 var messages = 3 ;

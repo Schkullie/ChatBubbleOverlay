@@ -27,27 +27,22 @@ body {
 
 #chat
 {
-	width: 100%;
 	max-width: 500px;
 	overflow: hidden;
 	position: relative;
-	bottom: -25px;
+	bottom: 35px;
 	padding: 20px;
 	background-color: white;
 	border-radius: 10px;
+	background-size: cover;
+	box-sizing: border-box;
 }
 
 #triangle
 {
-	position: relative;
+	position: fixed;
 	bottom: 0px;
-	/* left: 20px; */
 	width: 60px;
-}
-
-.stamp
-{
-	/* font-size: 10px; */
 }
 
 img
