@@ -45,6 +45,14 @@ body {
 	width: 60px;
 }
 
+#update
+{
+	position: fixed;
+	bottom: 0px;
+	background-color: white;
+	z-index: 3;
+}
+
 img
 {
 	margin: 0px 3px 0px 0px;
