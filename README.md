@@ -14,9 +14,6 @@ I built this Chat overlay live on my stream!
 
 > https://twitch.tv/schkullie
 
-If you like this overlay and want to support me, you can 
-> [Buy me a coffee](https://streamlabs.com/schkullie/tip)
-
 </br>
 
 **Credits:**
@@ -24,9 +21,6 @@ If you like this overlay and want to support me, you can
 This overlay is only possible thanks to [ComfyJS](https://github.com/instafluff/ComfyJS) made by [@Instafluff](https://github.com/instafluff)
 
 The default font used is [OpenDyslexic](https://www.opendyslexic.org/) and was choosen to be more inclusive by improving readability & accessibility
-
-**Tutorial:**
-[![Tutorial](https://img.youtube.com/vi/.../hqdefault.jpg)](https://www.youtube.com/)
 
 ## Schkullie ##
 I'm new to coding and this is a side thing I do, but I try my best to make stuff that's usefull for everybody
