@@ -36,7 +36,7 @@ If you don't like the chat bubble style there's also a text only option.
 
 ![side](https://cdn.discordapp.com/attachments/900379061900156948/970010213614751764/Sides.jpg)
 
-## Planed Features ##
+## Planned Features ##
 I've been working on this for quite some time and I'm not planing on working on this as actively as I've been.</br>
 So the following are things that could still be done, but will take time:
 - Add custom FrankerFaZ badges to replace standard ones (toggleable)
@@ -58,8 +58,8 @@ So the following are things that could still be done, but will take time:
 (recommended settings: width=800 px, height=1000px)
 
 ## Troubleshooting ##
-1. Chat doesn't carry over to other scenes
--> Make sure "refresh browser when scene becomes active" is disabled in the browser source settings. Otherwise it will refresh the browser and your chat will be gone.
+1. Chat doesn't carry over to other scenes</br>
+Make sure "refresh browser when scene becomes active" is disabled in the browser source settings. Otherwise it will refresh the browser and your messages will be gone.
 
 ## Credits: ##
 This overlay is only possible thanks to [ComfyJS](https://github.com/instafluff/ComfyJS) made by [@Instafluff](https://github.com/instafluff) as well as [TMI.js](https://github.com/tmijs/tmi.js)
