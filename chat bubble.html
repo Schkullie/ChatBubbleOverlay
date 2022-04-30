@@ -3,9 +3,10 @@
 		<title>Chat Bubble</title>
 		<meta charset="utf-8">
 		<link href="chat bubble.css" rel="stylesheet" type="text/css"/>
-		<link href="https://fonts.googleapis.com/css2?family=VT323" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto&family=VT323&display=swap" rel="stylesheet"> 
 			<!--script taken from https://github.com/instafluff/ComfyJS-->
 		<script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+		<script src="tmi.min.js"></script>
 		<script src="config.js"></script>
 	</head>
   
@@ -14,9 +15,11 @@
 	
 		<article id="bubble">
 			<p id="chat"></p>
-			<img id="triangle" src="smallthingy.png">
+			<svg id="triangle" width="51" height="52">
+				<polygon id='svg' points="10,0 43,0 4,43" style="fill:white" />
+			</svg>
 		</article>
 		
-		<script src="https://cdn.jsdelivr.net/gh/Schkullie/ChatBubbleOverlay/main.js"></script>
+		<script src="main.js"></script>
 	</body>
 </html>

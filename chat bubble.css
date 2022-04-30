@@ -9,10 +9,14 @@
 body {
     font-family: 'OpenDyslexic';
     font-size: 25px;
-	font-align: left;
+	text-align: left;
     color: black;
 	transition-timing-function: ease;
-	max-width: 500px;
+}
+
+img
+{
+	margin: 0px 3px 0px 0px;
 }
 
 #bubble
@@ -20,18 +24,22 @@ body {
 	position: fixed;
 	bottom: 0;
 	opacity: 0; 
-	transition-timing-function: ease-in;
-	transition-timing-function: ease-out;
-	transition: 0.2s;
+	transition-timing-function: ease-in-out;
+	transition: .5s;
 }
 
 #chat
 {
-	max-width: 500px;
+	max-width: 98.5vw;
+	max-height: 95vh;
 	overflow: hidden;
+	word-wrap: break-word;
 	position: relative;
-	bottom: 35px;
+	bottom: 58px;
+	left: 10px;
 	padding: 20px;
+	margin: 0px;
+	color: black;
 	background-color: white;
 	border-radius: 10px;
 	background-size: cover;
@@ -42,18 +50,38 @@ body {
 {
 	position: fixed;
 	bottom: 0px;
-	width: 60px;
+	height: 58px;
 }
 
 #update
 {
 	position: fixed;
+	max-width: 750px;
 	bottom: 0px;
+	right: 0px;
 	background-color: white;
-	z-index: 3;
+	z-index: -1;
 }
 
-img
+.pronoun
 {
-	margin: 0px 3px 0px 0px;
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: .15rem;
+	margin-right: .3rem;
+	vertical-align: middle;
+	padding: 2px;
+	border-radius: 5px;
+	color: black;
+	border: 1px solid black;
+}
+
+@keyframes pop-out {
+	20% { transform: scale(1.3); }
+	to { opacity: 0; transform: scale(0); }
+}
+
+@keyframes pop-in {
+	20% { transform: scale(1.3); }
+	to { opacity: 0; transform: scale(0); }
 }
