@@ -269,7 +269,7 @@
 								console.log('No user badge');
 							}
 						else {
-								var values = Object.keys(extra.userBadges);										
+								var values = Object.keys(extra.userBadges);
 								for (i = values.length; i >= 0; i--) {
 									var badgeID = values[i];
 									if(badgeID == "broadcaster") {
@@ -292,6 +292,15 @@
 									}
 									if(badgeID == "premium") {
 										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/bbbe0db0-a598-423e-86d0-f9fb98ca1933/1 \">' + usercolor;
+									}
+									if(badgeID == "artist-badge") {
+										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/4300a897-03dc-4e83-8c0e-c332fee7057f/1 \">' + usercolor;
+									}
+									if(badgeID == "no_audio") {
+										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/aef2cd08-f29b-45a1-8c12-d44d7fd5e6f0/1 \">' + usercolor;
+									}
+									if(badgeID == "no_video") {
+										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/199a0dba-58f3-494e-a7fc-1fa0a1001fb8/1 \">' + usercolor;
 									}
 									if(badgeID == 'sub-gifter') {
 										GiftAmount = ['1', '5', '10', '25', '50', '100', '250', '500', '1000'];
