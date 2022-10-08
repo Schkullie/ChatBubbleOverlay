@@ -116,9 +116,11 @@
 		//FFZ & BTTV API
 		var SubBadges = {};
 		var FFZchannelemoticons = {};
+		var FFZbadges = {};
 		var FFZglobalemoticons = {};
 		var BTTVchannelemoticons = {};
 		var BTTVglobalemoticons = {};
+		var SevenTVemoticons = {};
 		
 		//API calling
 		fetch("https://api.frankerfacez.com/v1/room/" + channel.toLowerCase())
@@ -126,7 +128,11 @@
 			.then(data => {return fetch("https://api.frankerfacez.com/v1/set/" + data.room.set);})
 			.then(res => {return res.json()})
 			.then(out => {FFZchannelemoticons = out})
-			.catch(err => { throw err});			
+			.catch(err => { throw err});
+		fetch("https://api.frankerfacez.com/v1/room/" + channel.toLowerCase())
+			.then(res => {return res.json()})
+			.then(out => {FFZbadges = out.room})
+			.catch(err => { throw err});
 		fetch("https://api.betterttv.net/3/cached/users/twitch/" +  twitch_id)
 			.then(res => {return res.json()})
 			.then(out => {BTTVchannelemoticons = out})
@@ -142,7 +148,11 @@
 			.then(res => {return res.json()})
 			.then(out => {SubBadges = out})
 			.catch(err => { throw err});
-		
+		fetch("https://7tv.io/v3/users/TWITCH/" + twitch_id)
+			.then(res => {return res.json()})
+			.then(out => {SevenTVemoticons = out})
+			.catch(err => { throw err});
+
 		var moderation = [];
 		var timer = null;
 		var pronounCache = [];
@@ -276,7 +286,17 @@
 										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1 \">' + usercolor;
 									}
 									if(badgeID == "moderator") {
-										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1 \">' + usercolor;
+										if(FFZbadge == "no") {
+											usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1 \">' + usercolor;
+										}
+										else {
+											if(FFZbadges !== undefined && FFZbadges.mod_urls !== null) {
+												usercolor = '<img src=\"https:' + FFZbadges.mod_urls[1] + '\">' + usercolor;
+											}
+											else {
+												usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1 \">' + usercolor;
+											}
+										}
 									}
 									if(badgeID == "partner") {
 										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/d12a2e27-16f6-41d0-ab77-b780518f00a3/1 \">' + usercolor;
@@ -288,7 +308,17 @@
 										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/511b78a9-ab37-472f-9569-457753bbe7d3/1 \">' + usercolor;
 									}
 									if(badgeID == "vip") {
-										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/b817aba4-fad8-49e2-b88a-7cc744dfa6ec/1 \">' + usercolor;
+										if(FFZbadge == "no") {										
+											usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/b817aba4-fad8-49e2-b88a-7cc744dfa6ec/1 \">' + usercolor;
+										}
+										else {
+											if(FFZbadges !== undefined && FFZbadges.vip_badge !== null) {
+												usercolor = '<img src=\"https:' + FFZbadges.vip_badge[1] + '\">' + usercolor;
+											}
+											else {
+													usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/b817aba4-fad8-49e2-b88a-7cc744dfa6ec/1 \">' + usercolor;
+											}
+										}
 									}
 									if(badgeID == "premium") {
 										usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/bbbe0db0-a598-423e-86d0-f9fb98ca1933/1 \">' + usercolor;
@@ -456,9 +486,21 @@
 								var BTTVname = BTTVglobalvals[i].code;
 								var re = new RegExp(`\\b${BTTVname}\\b`, 'g');
 								emotes = emotes.replace(re ,"<img src=\"https://cdn.betterttv.net/emote/" + BTTVglobalvals[i].id + "/1x\">");
-							}								
+							}
+							
+								//7TV
+							if(SevenTVemoticons.emote_set.emotes !== undefined) {
+								let SevenTVvals = Object.values(SevenTVemoticons.emote_set.emotes);
+								if(SevenTVemoticons !== undefined) {
+									for (i = 0; i < SevenTVemoticons.emote_set.emotes.length; i++) {
+										var SevenTVname = SevenTVvals[i].name;
+										var re = new RegExp(`\\b${SevenTVname}\\b`, 'g');
+										emotes = emotes.replace(re ,"<img src=\"https:" + SevenTVemoticons.emote_set.emotes[i].data.host.url + "/1x\">");
+									}
+								}
+							}
 						}
-				
+
 						// Adds a the current time to the start of message and gives it to array					
 					if(timestamp == 'yes')
 					{

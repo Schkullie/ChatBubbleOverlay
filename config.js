@@ -1,7 +1,7 @@
 //For the whole config applies: Leave the '' in place. The code won't work without them.
 //Also make sure to fill out all the settings
 
-var channel = 'Twitchname';
+var channel = 'TwitchName';
 //your Twitchname
 
 var twitch_id = 'TwitchID';
@@ -49,10 +49,13 @@ var commands = 'yes';
 //toggle if chat bot commands (the ones using ! at the beginning) should be shown. Put 'yes' to activate and 'no' to deactivate
 
 var thirdParty = 'yes';
-//activates FFZ & BTTV emotes. Put 'yes' to activate and 'no' to deactivate
+//activates FFZ, BTTV & 7TV emotes. Put 'yes' to activate and 'no' to deactivate
 
 var badges = 'yes';
 //toggle if badges (Broadcaster, Mod, VIP, Sub, Founder, Prime, Sub-Gift & Bits) should be shown. Put 'yes' to activate and 'no' to deactivate
+
+var FFZbadge = "no";
+//shows the FrankerFaceZ badges for moderators & VIPs instead of the standard ones. Put 'yes' to activate and 'no' to deactivate
 
 var pronouns = 'yes';
 //toggle if pronouns provided by https://pronouns.alejo.io/ (if availaible) should be shown. Put 'yes' to activate and 'no' to deactivate
@@ -69,3 +72,4 @@ var seconds = 15;
 
 var wait = 6;
 //seconds it takes until the messages get displayed in the overlay after beeing send in chat.
+//setting this to 0 might not make all messages appear instantly due to some API limitations
