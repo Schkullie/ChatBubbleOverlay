@@ -39,8 +39,8 @@ If you don't like the chat bubble style there's also a text only option.
 ## Planned Features ##
 I've been working on this for quite some time and I'm not planing on working on this as actively as I've been.</br>
 So the following are things that could still be done, but will take time:
-- Add custom FrankerFaZ badges to replace standard ones (toggleable)
-- Add 7TV emotes
+- ~~Add custom FrankerFaZ badges to replace standard ones (toggleable)~~
+- ~~Add 7TV emotes~~
 - Improve animations & look
 - Saving chat upon refresh
 - Port the widget to Streamelements
@@ -66,4 +66,4 @@ This overlay is only possible thanks to [ComfyJS](https://github.com/instafluff/
 
 Additional font used [OpenDyslexic](https://www.opendyslexic.org/)
 
-Special thanks to [EmmerWhalelord](https://www.twitch.tv/emmer_whalelord) (beta testing, bug hunting, feature request) & [Witchking](https://www.twitch.tv/witchking1999) (beta testing)
+Special thanks to [EmmerWhalelord](https://www.twitch.tv/emmer_whalelord) (beta testing, bug hunting, feature request), [Witchking](https://www.twitch.tv/witchking1999) (beta testing) & [Tzantzarel](https://www.twitch.tv/tzantzarel) (helping with 7TV emotes)
