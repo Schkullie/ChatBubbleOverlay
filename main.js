@@ -121,6 +121,8 @@
 		var BTTVchannelemoticons = {};
 		var BTTVglobalemoticons = {};
 		var SevenTVemoticons = {};
+		var pronounNames = {};
+		var badgesList = {};
 		
 		//API calling
 		fetch("https://api.frankerfacez.com/v1/room/" + channel.toLowerCase())
@@ -151,6 +153,14 @@
 		fetch("https://7tv.io/v3/users/TWITCH/" + twitch_id)
 			.then(res => {return res.json()})
 			.then(out => {SevenTVemoticons = out})
+			.catch(err => { throw err});
+		fetch("https://pronouns.alejo.io/api/pronouns")
+			.then(res => {return res.json()})
+			.then(out => {pronounNames = out})
+			.catch(err => { throw err});
+		fetch("https://badges.twitch.tv/v1/badges/global/display")
+			.then(res => {return res.json()})
+			.then(out => {badgesList = out})
 			.catch(err => { throw err});
 
 		var moderation = [];
@@ -252,8 +262,6 @@
 					var usercolor = "<span style=\"color:" + color + "\">" + user + "</span>";
 					
 					if(pronouns == 'yes'){
-						pronounsID = ['hehim', 'any', 'aeaer', 'eem', 'faefaer', 'heshe', 'hethem', 'itits', 'other', 'perper', 'sheher', 'shethem', 'theythem', 'vever', 'xexem', 'ziehir'];
-						pronounsText = ['He/Him', 'Any', 'Ae/Aer', 'E/Em', 'Fae/Faer', 'He/She', 'He/They', 'It/Its', 'Other', 'Per/Per', 'She/Her', 'She/They', 'They/Them', 'Ve/Ver', 'Xe/Xem', 'Zie/Hir'];
 						if(pronounsAPI.length == 0)
 						{
 							usercolor = usercolor;
@@ -261,10 +269,10 @@
 						}
 						else
 						{
-							for (i = 0; i < pronounsID.length; i++) {
-								if(pronounsAPI[0].pronoun_id == pronounsID[i])
+							for (i = 0; i < pronounNames.length; i++) {
+								if(pronounsAPI[0].pronoun_id == pronounNames[i].name)
 								{
-									usercolor = '<span class=pronoun>' + pronounsText[i] + '</span>' + usercolor;
+									usercolor = '<span class=pronoun>' + pronounNames[i].display + '</span>' + usercolor;
 									break
 								}
 							}
@@ -280,6 +288,7 @@
 							}
 						else {
 								var values = Object.keys(extra.userBadges);
+									// use Twitch API with badgesList, to make things future prove
 								for (i = values.length; i >= 0; i--) {
 									var badgeID = values[i];
 									if(badgeID == "broadcaster") {
@@ -392,21 +401,27 @@
 										}
 									}
 									if(badgeID == "subscriber") {
-										BadgeAge = ['0', '2', '3', '6', '9', '12', '18', '24', '36', '2000', '2002', '2003', '2006', '2009', '2012', '2018', '2024', '2036', '3000', '3002', '3003', '3006', '3009', '3012', '3018', '3024', '3036'];
-										if(SubBadges.badge_sets.subscriber == null)
-										{
-											usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/1 \">' + usercolor;
-										}
-										else
-										{
-											for (j = 0; j < BadgeAge.length; j++) {
-												if(extra.userBadges.subscriber === BadgeAge[j])
-												{
-													var num = BadgeAge[j];
-													usercolor = '<img src=' + SubBadges.badge_sets.subscriber.versions[num].image_url_1x + '>' + usercolor;
-													break;
+										if (Object.keys(SubBadges).length != 0 && SubBadges.constructor != Object){
+											BadgeAge = ['0', '2', '3', '6', '9', '12', '18', '24', '36', '2000', '2002', '2003', '2006', '2009', '2012', '2018', '2024', '2036', '3000', '3002', '3003', '3006', '3009', '3012', '3018', '3024', '3036'];
+											if(SubBadges.badge_sets.subscriber == null)
+											{
+												usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/1 \">' + usercolor;
+											}
+											else
+											{
+												
+												for (j = 0; j < BadgeAge.length; j++) {
+													if(extra.userBadges.subscriber === BadgeAge[j])
+													{
+														var num = BadgeAge[j];
+														usercolor = '<img src=' + SubBadges.badge_sets.subscriber.versions[num].image_url_1x + '>' + usercolor;
+														break;
+													}
 												}
 											}
+										}
+										else {
+											usercolor = '<img src=\"https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/1 \">' + usercolor;
 										}
 									}
 								}
