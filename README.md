@@ -6,6 +6,10 @@ This is a fully configurable dynamic chat overlay.</br>
 I wanted to create my own aesthetic looking and functional chat overlay, while learning to code.</br>
 The outcome is this overlay, you can use and configure however you like.
 
+## Disclaimer ##
+This is a learning project and barely maintained.</br>
+If you are looking for another chat overlay in this style I can recommend to take a look at [Zaytri's chat overlay](https://github.com/zaytri/stream-elements-widgets/tree/main/DynamicChatBubbles)
+
 ## Features ##
 
 **Pronouns, Badges & Timestamps**
@@ -40,11 +44,11 @@ If you don't like the chat bubble style there's also a text only option.
 ## Planned Features ##
 I've been working on this for quite some time and I'm not planing on working on this as actively as I've been for the 2.0 release.</br>
 So the following are things that could still be done, but will take time:
-- ~~Add custom FrankerFaZ badges to replace standard ones (toggleable)~~ *(added in 2.1)*
-- ~~Add 7TV emotes~~ *(added in 2.1)*
-- Improve animations & look
-- Saving chat upon refresh
-- Port the widget to Streamelements
+- [x] Add custom FrankerFaZ badges to replace standard ones (toggleable) *(added in 2.1)*
+- [x] Add 7TV emotes *(added in 2.1)*
+- [ ] Improve animations & look
+- [ ] Saving chat upon refresh
+- [ ] Port the widget to Streamelements
 
 ## Setup ##
 1. Download all the files and extract them somewhere on your PC
