@@ -2,6 +2,8 @@
 
 ![version](https://img.shields.io/badge/Version-2.1-success?style=for-the-badge) ![platform](https://img.shields.io/badge/Platforms-OBS%2FSLOBS-informational?style=for-the-badge)
 
+## Migrated to https://codeberg.org/Schkullie/ChatBubbleOverlay
+
 This is a fully configurable dynamic chat overlay.</br>
 I wanted to create my own aesthetic looking and functional chat overlay, while learning to code.</br>
 The outcome is this overlay, you can use and configure however you like.
